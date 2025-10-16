@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+          .section {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .section h2 {
+        font-size: 45px;
+        color: #ff3d00;
+        margin-bottom: 40px;
+    }
+
+    .recipes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        padding: 0 50px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+        color: #d84315;
+    }
+
+    .card-content p {
+        color: #555;
+        margin-bottom: 15px;
+    }
+    .view-btn {
+        background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    .view-btn:hover {
+        background: linear-gradient(90deg, #ff9100, #ff5722);
+        transform: scale(1.05);
+    }
+    header {
+         background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+          
+    }
+    #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 1030px;
+        }
+    }
+    @media (max-width:768px) {
+        #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+       
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 270px;
+        }
+    }   
+    }
+    .back-container {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #ff5722;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid black;
+            transition: 0.3s ease;
+            left: 100px;
+        }
+
+        .back-btn:hover {
+            background: #ff784e;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <header >
+    <h1 class="ab"><span>Food</span><span>Xpress</span><i class="fa-solid fa-truck-fast" id="ad"></i></h1>
+    <nav>
+        <h2>TRENDING</h2>
+    </nav>
+</header>
+    <section class="section" id="toprecipes">
+    <h2>Trending Recipes</h2>
+    <div class="recipes">
+
+        <div class="card">
+            <img src="https://bonmasala.com/wp-content/uploads/2022/10/mutton-biriyani-recipe.jpeg">
+            <div class="card-content">
+                <h3>Chicken Biryani</h3>
+                <p>Delicious, aromatic, and rich — a classic Indian favorite!</p>
+                <p class="time"> <i class="fa-solid fa-clock"></i> 2h to 3h</p>
+                <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+                <a href="chicken-biryani.html" class="view-btn">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="card">
+                <img src="https://www.whiskaffair.com/wp-content/uploads/2020/05/Kerala-Prawn-Curry-2-3.jpg">
+                <div class="card-content">
+                    <h3> Shrimp Curry</h3>
+                    <p>Juicy shrimp simmered in rich, spiced gravy — pure seafood comfort!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 1.5h</p>
+                    <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+                    <a href="Shrimp Curry.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+
+	<div class="card">
+                <img src="https://www.whiskaffair.com/wp-content/uploads/2014/08/Curd-Rice-2-3.jpg">
+                <div class="card-content">
+                    <h3>Curd Rice</h3>
+                    <p>Cool, creamy, and comforting — the perfect South Indian classic!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 30m to 1h</p>
+                    <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p>
+                    <a href="Curd Rice.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+
+
+	 <div class="card">
+                <img src="https://themadrasdiaries.nl/wp-content/uploads/2025/07/What-are-some-must-try-Indian-non-veg-dishes.webp">
+                <div class="card-content">
+                    <h3>Non-Veg Full Meal</h3>
+                    <p>Hearty, flavorful, and satisfying — a complete feast for true meat lovers!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 4h to 5h</p>
+                     <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p>
+                    <a href="n-veg meals.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+
+
+        <div class="card">
+            <img src="https://t3.ftcdn.net/jpg/00/96/19/86/360_F_96198695_oyJg0I7ELpXI6608FI942PX9LlRRyEnd.jpg">
+            <div class="card-content">
+                <h3>Chocolate Dessert</h3>
+                <p>Soft, spongy, and coated in smooth milk chocolate.</p>
+                <p> <i class="fa-solid fa-clock"></i> 3h to 4h</p>
+                 <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p>
+                <a href="recipe-dessert.html" class="view-btn">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.yumcurry.com/wp-content/uploads/2020/06/pizza-margherita-recipe.jpg">
+            <div class="card-content">
+                <h3>Pizza Margherita</h3>
+                <p>Classic cheesy pizza with rich tomato base and basil.</p>
+                <p> <i class="fa-solid fa-clock"></i> 3h to 5h</p>
+                <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p>
+                <a href="recipe-pizza.html" class="view-btn">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="card">
+                <img src="https://img.freepik.com/premium-photo/bowl-potato-chips_777078-80475.jpg">
+                <div class="card-content">
+                    <h3>Chips & Crisps</h3>
+                    <p> local flavors like spicy masala, tangy tomato, or chatpata are very popular</p>
+                    <p class="time"> <i class="fa-solid fa-clock"></i> 1h to 1.5h</p>
+                    <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+                    <a href="Chips.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.ndtvimg.com/i/2018-04/rasmalai_650x400_51523430877.jpg">
+                <div class="card-content">
+                    <h3>Rasmalai</h3>
+                    <p>About Rasmalai Recipe: An all-time favorite, rasmalai is a delectable Bengali dessert, freshly made ...</p>
+                    <p class="time"> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                    <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+                    <a href="rasmalai.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+
+        <div class="card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.XSCo5S6kP3o-7-jVqH4vGgHaE8?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-content">
+                <h3> Masala Dosa</h3>
+                <p>dosa is made from fermented batter of ground, soaked rice and black gram dal.</p>
+                <p> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+                <a href="masala-dosa.html" class="view-btn">View Recipe</a>
+            </div>
+         </div>
+
+    </div>
+</section>
+ <div class="back-container">
+        <a href="index.html" class="back-btn"> ⬅ Back</a>
+    </div>
+</body>
+</html>

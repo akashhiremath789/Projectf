@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Categories</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        .section {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .section h2 {
+        font-size: 45px;
+        color: #ff3d00;
+        margin-bottom: 40px;
+    }
+
+    .recipes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        padding: 0 50px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+        color: #d84315;
+    }
+
+    .card-content p {
+        color: #555;
+        margin-bottom: 15px;
+    }
+    .view-btn {
+        background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    .view-btn:hover {
+        background: linear-gradient(90deg, #ff9100, #ff5722);
+        transform: scale(1.05);
+    }
+    header {
+         background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 540px;
+        }
+    }
+    @media (max-width:700px) {
+        #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+       
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 270px;
+        }
+    }
+}
+.back-container {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #ff5722;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid black;
+            transition: 0.3s ease;
+            left: 100px;
+        }
+
+        .back-btn:hover {
+            background: #ff784e;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header >
+    <h1 class="ab"><span>Food</span><span>Xpress</span><i class="fa-solid fa-truck-fast" id="ad"></i></h1>
+    <nav>
+        <h2>Snacks</h2>
+    </nav>
+</header>
+    <section class="section">
+        <h2>Snacks</h2>
+        <div class="recipes">
+    
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/bowl-potato-chips_777078-80475.jpg">
+                <div class="card-content">
+                    <h3>Chips & Crisps</h3>
+                    <p> local flavors like spicy masala, tangy tomato, or chatpata are very popular</p>
+                    <p class="time"> <i class="fa-solid fa-clock"></i> 1h to 1.5h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="Chips.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://5.imimg.com/data5/FS/NK/DS/SELLER-38988832/whatsapp-image-2020-05-30-at-16-10-01-1000x1000.jpeg">
+                <div class="card-content">
+                    <h3>Namkeen</h3>
+                    <p>Namkeen refers to a wide variety of Indian savory snacks characterized by their salty, spicy, and crunchy flavors, popular across every region of India.</p>
+                    <p> <i class="fa-solid fa-clock"></i> 3h to 4h</p>
+                     <!-- <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p> -->
+                    <a href="namkeen.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://thumbs.dreamstime.com/b/popcorn-white-big-bowl-isolated-background-164812677.jpg">
+                <div class="card-content">
+                    <h3>Popcorn</h3>
+                    <p>Butter, cheese, caramel, spicy flavors</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 1.5h</p>
+                    <!-- <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p> -->
+                    <a href="popcorn.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://soyummyrecipes.com/wp-content/uploads/2023/07/Onion-bhaji.jpg">
+                <div class="card-content">
+                    <h3> Bhajji</h3>
+                    <p>Bhajji is made from a spiced batter of gram flour and sliced vegetables, which are deep-fried until golden and crispy</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h </p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="Bhajji.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+              
+              <div class="card">
+                <img src="https://i.ytimg.com/vi/fMJQOsM87fM/maxresdefault.jpg">
+                <div class="card-content">
+                    <h3> Bhel puri</h3>
+                    <p>Bhel Puri is made from puffed rice mixed with chopped vegetables, chutneys, and spices to create a tangy and crunchy snack.</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="Bhel-puri.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+
+              <div class="card">
+                <img src="https://static.showit.co/800/-YXFuH_2RZ-Y72zaYdCNnQ/shared/sri_lankan_mixture.jpg">
+                <div class="card-content">
+                    <h3> Mixture</h3>
+                    <p>Mixture is made from a combination of fried lentils, nuts, poha, sev, and spices mixed together to create a crunchy and flavorful snack.</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="Mixture.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+
+        </div>
+    </section>
+    <center>  <a href="index.html" class="back-btn">⬅ Back</a></center><br>
+    
+</body>
+</html>

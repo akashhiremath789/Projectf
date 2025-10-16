@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Categories with Active Animation</title>
+  <style>
+    .parent {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .img {
+      height: 100px;
+      width: 100px;
+      transition: height 0.3s ease, width 0.3s ease;
+    }
+    .img:hover {
+      height: 130px;
+      width: 130px;
+    }
+    a {
+      color: orangered;
+      text-decoration: none;
+    }
+    a:hover {
+      color: red;
+    }
+    .child {
+      height: 200px;
+      width: 200px;
+      border: 2px solid;
+      padding: 30px;
+      margin: 10px;
+      border-radius: 5%;
+      box-shadow: 0 4px 10px;
+      transition: transform 1.3s ease, color 1.3s ease, box-shadow 1.3s ease;
+      color: orangered;
+      font-family: cursive;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Stagger delays */
+    .child:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .child:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .child:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    .child:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+    .child:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+    .child:hover {
+      box-shadow: 2px 8px 18px;
+      transform: scale(1.15);
+      border-radius: 50%;
+      color: red;
+    }
+    /* Active state on link */
+    a:active > .child {
+      transform: translateY(0) scale(0.8);
+      transition: transform 0.1s ease;
+    }
+    @media (max-width: 600px) {
+      .child {
+        transition: transform 0.1s ease;
+      }
+      .child:hover {
+        transform: scale(1.05);
+      }
+      a:active > .child {
+        transform: translateY(0) scale(0.8);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="Categories">
+    <center>
+      <h1 style="color: orangered;">😋Categories😋</h1>
+    </center>
+  </div>
+  <div class="parent">
+    <a href="javascript:void(0)">
+      <div class="child" id="breakfast">
+        <center>
+          <img src="breakfast.png" alt="breakfast" class="img" /><br />
+          <h1>Breakfast</h1>
+        </center>
+      </div>
+    </a>
+    <a href="javascript:void(0)">
+      <div class="child" id="lunch">
+        <center>
+          <img src="lunch.png" alt="lunch" class="img" />
+          <h1>Lunch</h1>
+        </center>
+      </div>
+    </a>
+    <a href="javascript:void(0)">
+      <div class="child" id="dinner">
+        <center>
+          <img src="dinner.png" alt="dinner" class="img" />
+          <h1>Dinner</h1>
+        </center>
+      </div>
+    </a>
+    <a href="javascript:void(0)">
+      <div class="child" id="snacks">
+        <center>
+          <img src="snacks.png" alt="snacks" class="img" />
+          <h1>Snacks</h1>
+        </center>
+      </div>
+    </a>
+    <a href="javascript:void(0)">
+      <div class="child" id="dessert">
+        <center>
+          <img src="dessert.png" alt="dessert" class="img" />
+          <h1>Dessert</h1>
+        </center>
+      </div>
+    </a>
+  </div>
+</body>
+</html>

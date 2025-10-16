@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>veg-lunch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        .section {
+        text-align: center;
+        padding: 50px 20px;
+    }
+    header h1 span:first-child {
+    color: #00ff80;
+    }
+
+    .section h2 {
+        font-size: 45px;
+        color: #ff3d00;
+        margin-bottom: 40px;
+    }
+
+    .recipes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        padding: 0 50px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+        color: #d84315;
+    }
+
+    .card-content p {
+        color: #555;
+        margin-bottom: 15px;
+    }
+    .view-btn {
+        background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    .view-btn:hover {
+        background: linear-gradient(90deg, #ff9100, #ff5722);
+        transform: scale(1.05);
+    }
+    header {
+         background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+          
+    }
+    #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 1030px;
+        }
+    }
+    @media (max-width:700px) {
+        #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+       
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 270px;
+        }
+    }   
+    }
+    </style>
+</head>
+<body>
+    <header >
+    <h1 class="ab"><span>Food</span><span>Xpress</span><i class="fa-solid fa-truck-fast" id="ad"></i></h1>
+    <nav>
+        <h2>VEG-LUNCH</h2>
+    </nav>
+</header>
+    <section class="section">
+        <h2>VEG-LUNCH</h2>
+        <div class="recipes">
+    
+            <div class="card">
+                <img src="https://i.pinimg.com/1200x/fc/db/55/fcdb5566ce6e9f9c9959257af2e34a6f.jpg">
+                <div class="card-content">
+                    <h3>Hakka Noodles</h3>
+                    <p>Hearty, flavorful, and satisfying — a complete Indian thali experience in every bite!</p>
+                    <p class="time"> <i class="fa-solid fa-clock"></i> 2h to 3h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="noodels.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://as2.ftcdn.net/v2/jpg/14/68/54/37/1000_F_1468543773_3o7mz1gARwdwOCsZx64K5P1Py04o6h3L.jpg">
+                <div class="card-content">
+                    <h3>Chole Chickpea Curry</h3>
+                    <p>Hearty, spicy, and soul-satisfying — the true taste of North India in every bite!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                     <!-- <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p> -->
+                    <a href="chole.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://t4.ftcdn.net/jpg/16/53/22/63/240_F_1653226309_IYZfISYKBzpSuNME8nKN4RY8SKIQulrG.jpg">
+                <div class="card-content">
+                    <h3>Mushroom Biryani</h3>
+                    <p>Earthy, flavorful Rooms, and indulgent — a vegetarian delight that warms the soul!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 30m to 1h</p>
+                    <!-- <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p> -->
+                    <a href="mushroom.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://t4.ftcdn.net/jpg/12/92/06/17/360_F_1292061726_PMZ9hSatN9Mqv4nc1lMI7QHaRWMw1TTm.jpg">
+                <div class="card-content">
+                    <h3>Panner Kadai</h3>
+                    <p>Bold, spicy, and vibrant — a celebration of fresh vegetables in every bite!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 1.5h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="kadai.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+              <div class="card">
+                <img src="https://t4.ftcdn.net/jpg/11/66/55/81/240_F_1166558114_MKL7vfrrRHruKDpnZXUvBvIFWYt0SYmq.jpg">
+                <div class="card-content">
+                    <h3>Aloo Gobi Masala</h3>
+                    <p>Comforting, spicy, and full of flavor — a homely Indian classic that never disappoints!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 4h to 5h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="AlooGobi.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+              <div class="card">
+                <img src="https://i.pinimg.com/736x/ab/c1/29/abc129b74d5c0f0efa3c21b3f6af02ff.jpg">
+                <div class="card-content">
+                    <h3>Coconut Rice</h3>
+                    <p>Fragrant, nutty, and comforting — the essence of South Indian simplicity on a plate!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="coconut.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+             
+        </div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>nonveg-lunch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        .section {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .section h2 {
+        font-size: 45px;
+        color: #ff3d00;
+        margin-bottom: 40px;
+    }
+
+    .recipes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        padding: 0 50px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+        color: #d84315;
+    }
+
+    .card-content p {
+        color: #555;
+        margin-bottom: 15px;
+    }
+    .view-btn {
+        background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    .view-btn:hover {
+        background: linear-gradient(90deg, #ff9100, #ff5722);
+        transform: scale(1.05);
+    }
+    header {
+         background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+          
+    }
+    #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 440px;
+        }
+    }
+    @media (max-width:700px) {
+        #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+       
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 270px;
+        }
+    }   
+    }
+    .back-container {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #ff5722;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid black;
+            transition: 0.3s ease;
+            left: 100px;
+        }
+
+        .back-btn:hover {
+            background: #ff784e;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header >
+    <h1 class="ab"><span>Food</span><span>Xpress</span><i class="fa-solid fa-truck-fast" id="ad"></i></h1>
+    <nav>
+        <h2>NONVEG-LUNCH</h2>
+    </nav>
+</header>
+    <section class="section">
+        <h2>NONVEG-LUNCH</h2>
+        
+        <div class="recipes">
+              <div class="card">
+            <img src="https://bonmasala.com/wp-content/uploads/2022/10/mutton-biriyani-recipe.jpeg">
+            <div class="card-content">
+                <h3>Chicken Biryani</h3>
+                <p>Delicious, aromatic, and rich — a classic Indian favorite!</p>
+                <p class="time"> <i class="fa-solid fa-clock"></i> 2h to 3h</p>
+                <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                <a href="chicken-biryani.html" class="view-btn">View Recipe</a>
+            </div>
+        </div>
+    
+            <div class="card">
+                <img src="https://themadrasdiaries.nl/wp-content/uploads/2025/07/What-are-some-must-try-Indian-non-veg-dishes.webp">
+                <div class="card-content">
+                    <h3>Non-Veg Full Meal</h3>
+                    <p>Hearty, flavorful, and satisfying — a complete feast for true meat lovers!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 4h to 5h</p>
+                     <!-- <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p> -->
+                    <a href="n-veg meals.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://thumbs.dreamstime.com/b/indian-fish-thali-traditional-meal-whole-rice-curry-banana-leaf-served-wooden-plate-lime-wedges-315902726.jpg">
+                <div class="card-content">
+                    <h3>Fish Thali </h3>
+                    <p>Fresh, tangy, and wholesome — a coastal delight served on a plate!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 2h to 3h</p>
+                    <!-- <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p> -->
+                    <a href="Fish Thali.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://www.whiskaffair.com/wp-content/uploads/2020/05/Kerala-Prawn-Curry-2-3.jpg">
+                <div class="card-content">
+                    <h3> Shrimp Curry</h3>
+                    <p>Juicy shrimp simmered in rich, spiced gravy — pure seafood comfort!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 1.5h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="Shrimp Curry.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+              <div class="card">
+                <img src="https://www.ddi.in/media/recipes/image/prawn-biryani-1682422717.jpg">
+                <div class="card-content">
+                    <h3> Prawn Biryani</h3>
+                    <p>Fragrant rice layered with marinated prawns — every bite bursts with flavor!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="Prawn Biryani.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+              <div class="card">
+                <img src="https://www.yummytummyaarthi.com/wp-content/uploads/2014/05/1-5.jpg">
+                <div class="card-content">
+                    <h3> Crab Masala</h3>
+                    <p>Spicy, bold, and finger-licking good — a treat for every seafood lover!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="Crab Masala.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+             
+        </div>
+    </section>
+    <center><a href="veg.html" class="back-btn">⬅ Back</a></center>
+    
+</body>
+</html>

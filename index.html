@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodXpress - Recipe Book</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<style>
+    #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        font-size: 35px;
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 570px;
+        }
+    }
+    @media (max-width:768px) {
+        #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        font-size: 35px;
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 150px;
+        }
+    }
+    }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #fff8f0;
+    }
+
+    header {
+        background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    header h1 span:first-child {
+        color: #00ff80;
+    }
+
+    header h1 span:last-child {
+        color: white;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+    }
+
+    nav ul li {
+        cursor: pointer;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    nav ul li:hover {
+        color: #ffe082;
+    }
+
+    video {
+        width: 100%;
+        height: 90vh;
+        object-fit: cover;
+        filter: brightness(60%);
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 60px;
+        text-shadow: 3px 3px 10px black;
+    }
+
+    .hero-text p {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+    .section {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .section h2 {
+        font-size: 45px;
+        color: #ff3d00;
+        margin-bottom: 40px;
+    }
+
+    /* 🔹 Scrollable Trending Recipes Section (same as Categories) */
+    .recipes {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 20px 30px;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+
+      /* hide scrollbar */
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+
+    .recipes::-webkit-scrollbar {
+      display: none; /* hide scrollbar */
+    }
+
+    .recipes .card {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      width: 300px; /* same as categories */
+    }
+
+    .card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+        color: #d84315;
+    }
+
+    .card-content p {
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .view-btn {
+        background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    .view-btn:hover {
+        background: linear-gradient(90deg, #ff9100, #ff5722);
+        transform: scale(1.05);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #212121;
+        color: white;
+        margin-top: 50px;
+    }
+
+    .hero-text .scroll {
+      margin-top: 40px;
+      font-size: 1rem;
+      background-color: #ffb703;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: black;
+      font-weight: 600;
+      animation: bounce 2s infinite;
+      width: fit-content;
+      position: absolute;
+      top: 300px;
+      left: 40%;
+    }
+
+    .categories-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 20px 30px;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .categories-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .categories-scroll::-webkit-scrollbar-thumb {
+      background-color: var(--primary);
+      border-radius: 10px;
+    }
+
+    .categories-scroll .card {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      width: 300px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    /* Share Recipe Section */
+    .share-recipe {
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .share-recipe h2 {
+      font-size: 40px;
+      color: #ff3d00;
+      margin-bottom: 20px;
+      animation: slideDown 1s ease forwards;
+    }
+
+    .share-recipe p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 1.5s ease 0.5s forwards;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1.2s ease 0.8s forwards;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: #ff6f00;
+      box-shadow: 0 0 10px rgba(255, 111, 0, 0.3);
+      transform: scale(1.02);
+    }
+
+    form textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    form button {
+      background: linear-gradient(90deg, #ff6f00, #ff3d00);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+      animation: pulse 2s infinite;
+    }
+
+    form button:hover {
+      background: linear-gradient(90deg, #ff9100, #ff5722);
+      transform: scale(1.08);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .back-container {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #ff5722;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid black;
+            transition: 0.3s ease;
+            left: 100px;
+        }
+
+        .back-btn:hover {
+            background: #ff784e;
+            transform: translateY(-3px);
+        }
+        /*akash*/
+ .parentA{
+            display: flex;
+            justify-content:space-around;
+            flex-wrap: wrap;
+        
+        }
+         .imgA{
+            height: 80px;
+            width: 80px;
+        }
+        .childA{
+            height: 200px;
+            width: 200px;
+            border: 2px solid;
+            padding: 30px;
+            margin: 10px;
+            border-radius: 5%;
+            box-shadow: 0 4px 10px;
+            transition: 1.s;
+            color: #ff3d00;
+           font-family: cursive;
+        }
+        .imgA:hover{
+            height: 85px;
+            width: 85px;
+
+        }
+        .aA{
+            color:#ff3d00 ; 
+            text-decoration: none;
+        }
+        .aA:hover{
+            color: red;
+        }
+    
+        .childA:hover{
+            
+            box-shadow:2px 8px 18px ;
+            align-items: center;
+            /* padding-left: 85px; */
+            transform: scale(1.2);
+            /* transform: rotate3d(1,1,1,30deg);  */
+            border-radius: 50%;
+            flex-wrap: wrap;
+            color:red ;
+        
+            
+        }
+        .childA:active{
+            transform: scale(0.8);
+        }
+    
+         @media (max-width:600px){
+            .childA{
+                transition: 0.1s;
+            }
+            .childA:hover{
+                transform:scale(1.05)
+            }
+            .childA:active{
+                transform: scale(0.8);
+            }
+
+         }
+         .paraA{
+            color: green;
+         }
+         /*akash*/
+         .logout1{
+            cursor: pointer;
+         }
+         .footermain{
+            background-color: black;
+            border: 2px solid;
+            display: flex;
+            gap: 250px;
+            color:white;    
+            padding: 30px;
+            
+            
+        }
+        .footermain:hover{
+          color: orange;
+        }
+        .f1{
+            margin-left: 10px;
+        }
+    
+        #f2{
+            animation-name: moving;
+        animation-duration: 2s;
+        /* animation-delay: 2s; */
+        animation-iteration-count: infinite;
+        
+        font-size: 35px;
+        }
+        @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 20px;}
+        }
+        @media (max-width:768px) {
+            .footermain{
+            background-color: black;
+            border: 2px solid;
+            display: flex;
+            gap: 15px;
+            color:white;    
+            padding: 30px;
+            justify-content: center;
+            align-items: center;
+            }
+
+
+            .footermain:hover{
+          color: orange;
+        }
+            
+        }
+         
+</style>
+</head>
+<body>
+    <script>
+  if (localStorage.getItem("loggedIn") !== "true") {
+    // If not logged in, go to login page
+    window.location.href = "login1.html";
+  }
+</script>
+
+
+<header>
+    <h1><span>Food</span><span>Xpress</span><i class="fa-solid fa-truck-fast" id="ad"></i></h1>
+    <nav>
+        <ul class="ab">
+            <a href="#home"><li>Home</li></a>
+            <a href="#toprecipes"><li>Top Recipes</li></a>
+            <a href="#categories"><li>Categories</li></a>
+            <a href="#footer"><li>Contact</li></a>
+            <!-- <li><button onclick="logout()" style="background-color: orange;padding: 3px; color: white;">Logout</button></li> -->
+             <a  onclick="logout()" class="logout1">Logout</a>
+        </ul>
+        
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <video autoplay muted loop src="v.mp4"></video>
+    <div class="hero-text">
+        <h1>Welcome to FoodXpress</h1>
+        <p>Explore, cook, and enjoy! Hundreds of curated recipes designed to bring authentic flavors to your kitchen.</p>
+       <center><a href="#toprecipes"><div class="scroll">Scroll Down ⬇</div></a></center>
+    </div>
+</div>
+
+<section class="section" id="toprecipes">
+    <h2>Trending Recipes</h2>
+    <div class="recipes">
+
+        <div class="card">
+            <img src="https://bonmasala.com/wp-content/uploads/2022/10/mutton-biriyani-recipe.jpeg">
+            <div class="card-content">
+                <h3>Chicken Biryani</h3>
+                <p>Delicious, aromatic, and rich — a classic Indian favorite!</p>
+                <p class="time"> <i class="fa-solid fa-clock"></i> 2h to 3h</p>
+                <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+                <a href="recipe-biryani.html" class="view-btn">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="card">
+                <img src="https://www.whiskaffair.com/wp-content/uploads/2020/05/Kerala-Prawn-Curry-2-3.jpg">
+                <div class="card-content">
+                    <h3> Shrimp Curry</h3>
+                    <p>Juicy shrimp simmered in rich, spiced gravy — pure seafood comfort!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 1.5h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="Shrimp Curry.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+
+	<div class="card">
+                <img src="https://www.whiskaffair.com/wp-content/uploads/2014/08/Curd-Rice-2-3.jpg">
+                <div class="card-content">
+                    <h3>Curd Rice</h3>
+                    <p>Cool, creamy, and comforting — the perfect South Indian classic!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 30m to 1h</p>
+                    <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p>
+                    <a href="Curd Rice.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+
+
+	 <div class="card">
+                <img src="https://themadrasdiaries.nl/wp-content/uploads/2025/07/What-are-some-must-try-Indian-non-veg-dishes.webp">
+                <div class="card-content">
+                    <h3>Non-Veg Full Meal</h3>
+                    <p>Hearty, flavorful, and satisfying — a complete feast for true meat lovers!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 4h to 5h</p>
+                     <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p>
+                    <a href="n-veg meals.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+
+
+        <div class="card">
+            <img src="https://t3.ftcdn.net/jpg/00/96/19/86/360_F_96198695_oyJg0I7ELpXI6608FI942PX9LlRRyEnd.jpg">
+            <div class="card-content">
+                <h3>Chocolate Dessert</h3>
+                <p>Soft, spongy, and coated in smooth milk chocolate.</p>
+                <p> <i class="fa-solid fa-clock"></i> 3h to 4h</p>
+                 <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p>
+                <a href="recipe-dessert.html" class="view-btn">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.yumcurry.com/wp-content/uploads/2020/06/pizza-margherita-recipe.jpg">
+            <div class="card-content">
+                <h3>Pizza Margherita</h3>
+                <p>Classic cheesy pizza with rich tomato base and basil.</p>
+                <p> <i class="fa-solid fa-clock"></i> 3h to 5h</p>
+                <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p>
+                <a href="recipe-pizza.html" class="view-btn">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="card">
+                <img src="https://img.freepik.com/premium-photo/bowl-potato-chips_777078-80475.jpg">
+                <div class="card-content">
+                    <h3>Chips & Crisps</h3>
+                    <p> local flavors like spicy masala, tangy tomato, or chatpata are very popular</p>
+                    <p class="time"> <i class="fa-solid fa-clock"></i> 1h to 1.5h</p>
+                    <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+                    <a href="Chips.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.ndtvimg.com/i/2018-04/rasmalai_650x400_51523430877.jpg">
+                <div class="card-content">
+                    <h3>Rasmalai</h3>
+                    <p>About Rasmalai Recipe: An all-time favorite, rasmalai is a delectable Bengali dessert, freshly made ...</p>
+                    <p class="time"> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                    <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+                    <a href="rasmalai.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+
+        <div class="card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.XSCo5S6kP3o-7-jVqH4vGgHaE8?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-content">
+                <h3> Masala Dosa</h3>
+                <p>dosa is made from fermented batter of ground, soaked rice and black gram dal.</p>
+                <p> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+                <a href="masala-dosa.html" class="view-btn">View Recipe</a>
+            </div>
+         </div>
+
+    </div>
+</section>
+ <div class="back-container">
+        <a href="trending-recepe.html" class="back-btn"> View all</a>
+    </div>
+    <div class="CategoriesA" id="categories"><center><h1 style="color: #ff3d00;">Categories</h1></center></div><br>
+    <div class="parentA">
+      <a href="breakfast.html" class="aA"><div class="childA" id="breakfast">
+           <center> <img src="breakfast.png" alt="breakfast" class="imgA"></img><br>
+            <h2>Breakfast</h2></center>
+        </div></a>
+       <a href="veg.html" class="aA"><div class="childA" id="lunch">
+           <center> <img src="lunch.png" alt="lunch" class="imgA"></img>
+            <h2>Lunch</h2></center>
+        </div></a> 
+        <a href="#" class="aA"><div class="childA" id="dinner">
+         <center>   <img src="dinner.png" alt="dinner" class="imgA"></img>
+            <h2>Dinner</h2></center>
+        </div></a>
+        <a href="snacks.html" class="aA"><div class="childA" id="snacks">
+           <center> <img src="snacks.png" alt="snacks" class="imgA"></img>
+            <h2>Snacks</h2></center>
+        </div></a>
+        <a href="index1.html" class="aA"><div class="childA" id="dessert">
+           <center> <img src="dessert.png" alt="dessert" class="imgA"></img>
+            <h2>Dessert</h2></center>
+        </div></a>
+    </div>
+
+
+
+<div class="share-recipe" id="share">
+  <h2>Share Your Recipe </h2>
+  <form action="#" method="post">
+    <img src="share.png" height="200px" width="200px">
+    <p>Have a delicious recipe? Share it with FoodXpress and let food lovers around the world enjoy your creation!</p>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <input type="text" placeholder="Recipe Title" required>
+    <textarea placeholder="Write your recipe details here..." required></textarea>
+    <button type="submit">
+      <i class="fa-solid fa-paper-plane"></i> Submit Recipe
+    </button>
+  </form>
+</div>
+
+<div class="footermain" id="footer">
+    <div class="f1">
+    <h1 class="fh"><span>Food</span><span>Xpress</span><i class="fa-solid fa-truck-fast" id="f2"></i></h1><br>
+    <h3>FoodXpress © 2025</h3>
+  <p>Designed by xyz | Crafted with ❤ for food lovers everywhere.</p>
+    </div>
+
+    <div class="f2">
+        <h2>Contact Us:</h2><br>
+        <p>Contact number:1231231231</p>
+        <p>Email:Foodxpress@gmail.com</p>
+        <p>Partner with us</p>
+    </div>
+
+    <div class="f3">
+        <h2 style="margin-bottom: 5px;">Follow us on:</h2><br>
+        <p style="font-size: 20px;"><i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-youtube"></i>  <i class="fa-brands fa-twitter"></i></p>
+
+    </div>
+</div>
+
+
+
+<script>
+  function logout() {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login1.html";
+  }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>nonveg-lunch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        .section {
+        text-align: center;
+        padding: 50px 20px;
+    }
+    header h1 span:first-child {
+    color: #00ff80;
+    }
+
+    .section h2 {
+        font-size: 45px;
+        color: #ff3d00;
+        margin-bottom: 40px;
+    }
+
+    .recipes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        padding: 0 50px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+        color: #d84315;
+    }
+
+    .card-content p {
+        color: #555;
+        margin-bottom: 15px;
+    }
+    .view-btn {
+        background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    .view-btn:hover {
+        background: linear-gradient(90deg, #ff9100, #ff5722);
+        transform: scale(1.05);
+    }
+    header {
+         background: linear-gradient(90deg, #ff6f00, #ff3d00);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+          
+    }
+    #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 950px;
+        }
+    }
+    @media (max-width:700px) {
+        #ad{
+        animation-name: moving;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+       
+        font-size: 35px;
+
+    }
+    @keyframes moving {
+        from{
+            margin-left: 0px;
+        }
+        to{
+            margin-left: 270px;
+        }
+    }   
+    }
+    </style>
+</head>
+<body>
+    <header >
+    <h1 class="ab"><span>Food</span><span>Xpress</span><i class="fa-solid fa-truck-fast" id="ad"></i></h1>
+    <nav>
+        <h2>NONVEG-DINNER</h2>
+    </nav>
+</header>
+    <section class="section">
+        <h2>NONVEG-DINNER</h2>
+        
+        <div class="recipes">
+              <div class="card">
+            <img src="https://www.shutterstock.com/image-photo/butter-chicken-curry-basmati-rice-600nw-117086992.jpg">
+            <div class="card-content">
+                <h3>Butter Chicken</h3>
+                <p>Creamy, buttery, and rich — a classic Indian favorite!</p>
+                <p class="time"> <i class="fa-solid fa-clock"></i> 2h to 3h</p>
+                <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                <a href="buttermasla.html" class="view-btn">View Recipe</a>
+            </div>
+        </div>
+    
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/1185235273/photo/south-indian-style-egg-curry-recipe-close-up-in-a-plate-horizontal-top-view.jpg?s=612x612&w=0&k=20&c=dLaPOcwR-bYl1NH3uRTT6d6dwnKB-2G88ge1bB3dRnw=">
+                <div class="card-content">
+                    <h3>Egg Curry</h3>
+                    <p>Curry – Simple yet hearty — boiled eggs simmered in spiced tomato-onion gravy.</p>
+                    <p> <i class="fa-solid fa-clock"></i> 4h to 5h</p>
+                     <!-- <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p> -->
+                    <a href="eggcurry.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/35/d2/af/35d2afff1a8dfa5de76bcd7e01029eb3.jpg">
+                <div class="card-content">
+                    <h3>Fish curry</h3>
+                    <p>“Rich, spicy, and comforting — a coastal favorite simmered in creamy coconut gravy!”</p>
+                    <p> <i class="fa-solid fa-clock"></i> 2h to 3h</p>
+                    <!-- <p>3.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p> -->
+                    <a href="fishcurry.html" class="view-btn">View Recipe</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/038/972/486/small_2x/ai-generated-chicken-korma-isolated-on-white-indian-cuisine-meat-curry-dish-with-coconut-milk-masala-asian-food-photo.jpg">
+                <div class="card-content">
+                    <h3>Chicken Korma</h3>
+                    <p>Creamy, aromatic, and mildly spiced — a royal indulgence in every bite!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 1.5h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="chickkorma.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+              <div class="card">
+                <img src="https://static.toiimg.com/thumb/53192600.cms?imgsize=418831&width=800&height=800">
+                <div class="card-content">
+                    <h3>Mutton Rosh</h3>
+                    <p>Rich, aromatic, and deeply flavorful — a royal Kashmiri dish that melts in your mouth!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="muttonrosh.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+              <div class="card">
+                <img src="https://i.pinimg.com/1200x/c2/52/bc/c252bc2c19304ab9d44b6ab571d27a39.jpg">
+                <div class="card-content">
+                    <h3>Malabar Chicken Biryani</h3>
+                    <p>Fragrant, layered, and bursting with coastal flavors — a royal treat in every spoonful!</p>
+                    <p> <i class="fa-solid fa-clock"></i> 1h to 2h</p>
+                    <!-- <p>4.5<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p> -->
+                    <a href="hydrabadi65.html" class="view-btn">View Recipe</a>
+                </div>
+             </div>
+             
+        </div>
+    </section>
+    
+</body>
+</html>
