@@ -6,6 +6,7 @@
 <title>FoodXpress - Recipe Book</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <style>
+  
     #ad{
         animation-name: moving;
         animation-duration: 5s;
@@ -367,7 +368,7 @@
             background: #ff784e;
             transform: translateY(-3px);
         }
-        /*akash*/
+        /akash/
  .parentA{
             display: flex;
             justify-content:space-around;
@@ -435,7 +436,7 @@
          .paraA{
             color: green;
          }
-         /*akash*/
+         /akash/
          .logout1{
             cursor: pointer;
          }
@@ -489,7 +490,34 @@
         }
             
         }
-         
+       /* ✅ Responsive Fix for HEADER & FOOTER only */
+
+@media (max-width: 1024px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  nav ul li {
+    font-size: 16px;
+  }
+
+  .footermain {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 40px;
+  }
+} 
+
 </style>
 </head>
 <body>
@@ -521,7 +549,7 @@
     <div class="hero-text">
         <h1>Welcome to FoodXpress</h1>
         <p>Explore, cook, and enjoy! Hundreds of curated recipes designed to bring authentic flavors to your kitchen.</p>
-       <center><a href="#toprecipes"><div class="scroll">Scroll Down ⬇</div></a></center>
+        <a href="#toprecipes"><div class="scroll">Scroll Down ⬇</div></a>
     </div>
 </div>
 
