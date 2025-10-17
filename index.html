@@ -6,7 +6,6 @@
 <title>FoodXpress - Recipe Book</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <style>
-  
     #ad{
         animation-name: moving;
         animation-duration: 5s;
@@ -19,7 +18,7 @@
             margin-left: 0px;
         }
         to{
-            margin-left: 570px;
+            margin-left: 600px;
         }
     }
     @media (max-width:768px) {
@@ -368,7 +367,7 @@
             background: #ff784e;
             transform: translateY(-3px);
         }
-        /akash/
+        /*akash*/
  .parentA{
             display: flex;
             justify-content:space-around;
@@ -436,7 +435,7 @@
          .paraA{
             color: green;
          }
-         /akash/
+         /*akash*/
          .logout1{
             cursor: pointer;
          }
@@ -490,34 +489,140 @@
         }
             
         }
-       /* ✅ Responsive Fix for HEADER & FOOTER only */
+        /* ==================== 🔹 ADDITIONAL RESPONSIVE STYLES 🔹 ==================== */
 
+/* Large Tablets (max-width: 1024px) */
 @media (max-width: 1024px) {
   header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 25px;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
   }
 
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
   }
 
-  nav ul li {
-    font-size: 16px;
+  .section h2 {
+    font-size: 36px;
+  }
+
+  .card {
+    width: 280px;
+  }
+
+  #ad {
+    font-size: 30px;
+    animation: moving 5s infinite alternate;
+  }
+
+  @keyframes moving {
+    from { margin-left: 0; }
+    to { margin-left: 250px; }
+  }
+}
+
+/* Tablets and Small Laptops (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  video {
+    height: 60vh;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+
+  .recipes {
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .card {
+    width: 90%;
+    margin: auto;
+  }
+
+  #ad {
+    font-size: 26px;
+    animation: moving 4s infinite alternate;
+  }
+
+  @keyframes moving {
+    from { margin-left: 0; }
+    to { margin-left: 120px; }
   }
 
   .footermain {
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    text-align: center;
-    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
   }
-} 
+}
 
+/* Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+  }
+
+  .card-content h3 {
+    font-size: 20px;
+  }
+
+  .card-content p {
+    font-size: 14px;
+  }
+
+  .view-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  #ad {
+    font-size: 22px;
+    animation: moving 4s infinite alternate;
+  }
+
+  @keyframes moving {
+    from { margin-left: 0; }
+    to { margin-left: 80px; }
+  }
+
+  .footermain {
+    font-size: 14px;
+    gap: 10px;
+  }
+}
+
+         
 </style>
 </head>
 <body>
@@ -526,6 +631,7 @@
     // If not logged in, go to login page
     window.location.href = "login1.html";
   }
+  
 </script>
 
 
@@ -549,7 +655,7 @@
     <div class="hero-text">
         <h1>Welcome to FoodXpress</h1>
         <p>Explore, cook, and enjoy! Hundreds of curated recipes designed to bring authentic flavors to your kitchen.</p>
-        <a href="#toprecipes"><div class="scroll">Scroll Down ⬇</div></a>
+       <center><a href="#toprecipes"><div class="scroll">Scroll Down ⬇</div></a></center>
     </div>
 </div>
 
