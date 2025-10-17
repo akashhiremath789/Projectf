@@ -9,10 +9,30 @@
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #ff3d00, #ff6f00);
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align from top */
     align-items: center;
     height: 100vh;
+    margin: 0;
   }
+
+  .img {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .img img {
+    width: 200px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  h2.main-title {
+    color: black;
+    text-align: center;
+    margin: 10px 0 30px 0;
+  }
+
   .login-container {
     background: white;
     padding: 40px;
@@ -21,10 +41,12 @@
     width: 300px;
     text-align: center;
   }
+
   h2 {
     color: #ff3d00;
     margin-bottom: 20px;
   }
+
   input {
     width: 90%;
     padding: 10px;
@@ -32,6 +54,7 @@
     border: 1px solid #ccc;
     border-radius: 10px;
   }
+
   button {
     background: linear-gradient(90deg, #ff6f00, #ff3d00);
     color: white;
@@ -41,13 +64,20 @@
     cursor: pointer;
     font-weight: bold;
   }
+
   button:hover {
     background: linear-gradient(90deg, #ff9100, #ff5722);
   }
 </style>
 </head>
 <body>
-  
+
+  <div class="img">
+    <img src="Create a high-defini.png" alt="FoodXpress Logo">
+  </div>
+
+  <h2 class="main-title">FOODXPRESS - HomeMade Happiness In Every Bite</h2>
+
   <div class="login-container">
     <h2>Login to FoodXpress</h2>
     <input type="text" id="username" placeholder="Enter Username" required><br>
@@ -60,7 +90,6 @@ function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
 
-  // Simple login check (you can change credentials)
   if (user === "admin" && pass === "1234") {
     localStorage.setItem("loggedIn", "true");
     window.location.href = "index.html";
